@@ -296,30 +296,93 @@ nav{
 }
 
 /* ── DEPOIMENTOS ── */
-#depoimentos{padding:100px 0;border-top:1px solid var(--border);}
-.dep-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px;}
-.dep{
-  background:rgba(255,255,255,0.03);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border:1px solid var(--border);border-radius:14px;padding:28px;
-  transition:border-color .2s;
+#depoimentos{padding:100px 0;border-top:1px solid var(--border);background:var(--bg2);}
+.dep-intro{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;flex-wrap:wrap;gap:20px;}
+
+/* Grid masonry-like */
+.dep-masonry{
+  columns:3;column-gap:16px;
 }
-.dep:hover{border-color:var(--border-warm);}
-.dep-q{
-  font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;margin-bottom:12px;
+@media(max-width:960px){.dep-masonry{columns:2;}}
+@media(max-width:540px){.dep-masonry{columns:1;}}
+
+.dep-card{
+  break-inside:avoid;
+  margin-bottom:16px;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  border:1px solid var(--border);
+  transition:border-color .25s, transform .25s;
+}
+.dep-card:hover{border-color:var(--border-warm);transform:translateY(-3px);}
+
+/* Imagem */
+.dep-card img{
+  width:100%;display:block;
+  object-fit:cover;
+  transition:transform .4s;
+}
+.dep-card:hover img{transform:scale(1.03);}
+
+/* Vídeo */
+.dep-card video{
+  width:100%;display:block;
+  background:#000;
+}
+.dep-card .dep-play{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(10,8,8,0.7);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1.5px solid rgba(240,165,0,0.4);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;pointer-events:none;
+  transition:opacity .2s;
+}
+.dep-card.playing .dep-play{opacity:0;}
+
+/* Overlay com label */
+.dep-card .dep-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:20px 16px 14px;
+  background:linear-gradient(to top,rgba(5,3,3,0.9) 0%,transparent 100%);
+  transform:translateY(4px);opacity:0;
+  transition:all .25s;
+}
+.dep-card:hover .dep-overlay{opacity:1;transform:translateY(0);}
+.dep-overlay-label{
+  font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.dep-txt{font-size:0.84rem;color:var(--dim);line-height:1.85;font-weight:300;}
-.dep-txt strong{color:var(--cream);font-weight:500;}
-.dep-foot{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
-.dep-name{font-size:0.75rem;font-weight:600;color:var(--cream);}
-.dep-role{font-size:0.6rem;color:var(--dimmer);margin-top:2px;}
-.dep-wide{grid-column:1/-1;display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
-.dep-wide-text{flex:1;min-width:260px;}
-.dep-prints{display:flex;gap:12px;}
-.dep-print{width:160px;aspect-ratio:9/16;border-radius:10px;object-fit:cover;border:1px solid var(--border);cursor:pointer;transition:all .2s;}
-.dep-print:hover{opacity:.85;border-color:var(--border-warm);}
-.dep-print-lab{font-size:0.58rem;color:var(--dimmer);text-align:center;margin-top:6px;}
+.dep-overlay-sub{font-size:0.58rem;color:rgba(245,237,214,0.5);margin-top:2px;}
+
+/* Card texto (depoimentos escritos) */
+.dep-text-card{
+  break-inside:avoid;
+  margin-bottom:16px;
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--border);border-radius:16px;
+  padding:28px 24px;
+  transition:border-color .25s;
+}
+.dep-text-card:hover{border-color:var(--border-warm);}
+.dep-text-q{
+  font-family:'Bebas Neue',sans-serif;font-size:3.5rem;line-height:0.8;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:14px;display:block;
+}
+.dep-text-body{font-size:0.84rem;color:var(--dim);line-height:1.85;font-weight:300;}
+.dep-text-body strong{color:var(--cream);font-weight:500;}
+.dep-text-foot{
+  margin-top:20px;padding-top:16px;border-top:1px solid var(--border);
+  display:flex;align-items:center;gap:10px;
+}
+.dep-text-name{font-size:0.75rem;font-weight:600;color:var(--cream);}
+.dep-text-role{font-size:0.6rem;color:var(--dimmer);margin-top:2px;}
 
 /* ── SERVIÇOS ── */
 #servicos{padding:100px 0;border-top:1px solid var(--border);}
@@ -640,36 +703,29 @@ footer{padding:28px 0;border-top:1px solid var(--border);}
 <!-- DEPOIMENTOS -->
 <section id="depoimentos">
   <div class="wrap">
-    <span class="eyebrow reveal">O que dizem os clientes</span>
-    <h2 class="big-title reveal d1" style="font-size:clamp(2.2rem,4vw,4rem);">CLIENTES<br><em>SATISFEITOS</em></h2>
-    <div class="dep-grid">
-      <div class="dep reveal">
-        <div class="dep-q">"</div>
-        <p class="dep-txt">Resultado acima do esperado. <strong>Tu é brabo.</strong></p>
-        <div class="dep-foot"><div class="dep-name">Cliente Shineray</div><div class="dep-role">Grupo Shineray Motos</div></div>
+    <div class="dep-intro">
+      <div>
+        <span class="eyebrow reveal">Prova social</span>
+        <h2 class="big-title reveal d1" style="font-size:clamp(2.2rem,4vw,4rem);">O QUE DIZEM<br><em>OS CLIENTES</em></h2>
       </div>
-      <div class="dep reveal d1">
-        <div class="dep-q">"</div>
-        <p class="dep-txt"><strong>2 agendamentos, 1 encomenda confirmada</strong> — e as vendas não param. Cliente entrou há 10 dias e já está gerando resultado consistente.</p>
-        <div class="dep-foot"><div class="dep-name">Matheus Darwich</div><div class="dep-role">Ounce Conceito · @ounce_conceito</div></div>
-      </div>
-      <div class="dep dep-wide reveal">
-        <div class="dep-wide-text">
-          <div class="dep-q">"</div>
-          <p class="dep-txt">Prints reais das conversas com clientes — <strong>resultado acima do esperado, vendas chegando, equipe comercial a todo vapor.</strong></p>
-          <p class="dep-txt" style="margin-top:10px;">Publicados nos stories da <strong>@aorbimarketing</strong>. Clique para ampliar.</p>
-        </div>
-        <div class="dep-prints">
-          <div>
-            <img src="imagens/depoimentos/dep01.png" alt="Depoimento 1" class="dep-print" onclick="openLB(this.src)">
-            <p class="dep-print-lab">Ampliar</p>
-          </div>
-          <div>
-            <img src="imagens/depoimentos/dep02.png" alt="Depoimento 2" class="dep-print" onclick="openLB(this.src)">
-            <p class="dep-print-lab">Ampliar</p>
-          </div>
+    </div>
+    <div class="dep-masonry" id="dep-masonry">
+      <!-- Cards de texto fixos -->
+      <div class="dep-text-card reveal">
+        <span class="dep-text-q">"</span>
+        <p class="dep-text-body">Resultado acima do esperado. <strong>Tu é brabo.</strong></p>
+        <div class="dep-text-foot">
+          <div><div class="dep-text-name">Cliente Shineray</div><div class="dep-text-role">Grupo Shineray Motos</div></div>
         </div>
       </div>
+      <div class="dep-text-card reveal d1">
+        <span class="dep-text-q">"</span>
+        <p class="dep-text-body"><strong>2 agendamentos, 1 encomenda confirmada</strong> e as vendas não param. Cliente entrou há 10 dias e já está gerando resultado consistente.</p>
+        <div class="dep-text-foot">
+          <div><div class="dep-text-name">Matheus Darwich</div><div class="dep-text-role">Ounce Conceito · @ounce_conceito</div></div>
+        </div>
+      </div>
+      <!-- Mídia carregada via JS -->
     </div>
   </div>
 </section>
@@ -787,24 +843,79 @@ footer{padding:28px 0;border-top:1px solid var(--border);}
 const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-// GALERIA — carrega do JSON
+// GALERIA DE RESULTADOS — carrega do JSON, mais recente primeiro
 async function loadGaleria(){
   const track = document.getElementById('galeria');
   try{
     const res = await fetch('imagens/resultados/index.json');
     const files = await res.json();
     files.forEach(file=>{
+      const isVideo = /\.(mp4|mov|webm)$/i.test(file);
       const card = document.createElement('div');
       card.className = 'story';
-      card.innerHTML = `<img src="imagens/resultados/${file}" alt="Resultado" loading="lazy">`;
-      card.onclick = ()=>openLB(`imagens/resultados/${file}`);
+      if(isVideo){
+        card.innerHTML = `
+          <video src="imagens/resultados/${file}" muted playsinline loop preload="metadata"
+            style="width:100%;height:100%;object-fit:cover;">
+          </video>
+          <div class="dep-play">▶</div>`;
+        card.addEventListener('click',()=>{
+          const v = card.querySelector('video');
+          if(v.paused){v.play();card.classList.add('playing');}
+          else{v.pause();card.classList.remove('playing');}
+        });
+      } else {
+        card.innerHTML = `<img src="imagens/resultados/${file}" alt="Resultado" loading="lazy">`;
+        card.onclick = ()=>openLB(`imagens/resultados/${file}`);
+      }
       track.appendChild(card);
     });
   }catch(e){
-    track.innerHTML = `<div class="story" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px;"><span style="font-size:2rem">📊</span><span style="font-size:0.65rem;color:var(--dim);text-align:center;">Adicione imagens em<br>imagens/resultados/<br>e liste no index.json</span></div>`;
+    track.innerHTML = `<div class="story" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px;"><span style="font-size:2rem">📊</span><span style="font-size:0.65rem;color:var(--dim);text-align:center;">Adicione arquivos em<br>imagens/resultados/<br>e liste no index.json</span></div>`;
   }
 }
 loadGaleria();
+
+// DEPOIMENTOS — carrega do JSON, mais recente primeiro (índice 0 = mais novo)
+async function loadDepoimentos(){
+  const masonry = document.getElementById('dep-masonry');
+  try{
+    const res = await fetch('imagens/depoimentos/index.json');
+    const files = await res.json();
+    files.forEach(item=>{
+      const file = typeof item === 'string' ? item : item.file;
+      const label = typeof item === 'object' && item.label ? item.label : '';
+      const sub = typeof item === 'object' && item.sub ? item.sub : '';
+      const isVideo = /\.(mp4|mov|webm)$/i.test(file);
+      const card = document.createElement('div');
+      card.className = 'dep-card reveal';
+      if(isVideo){
+        card.innerHTML = `
+          <video src="imagens/depoimentos/${file}" muted playsinline preload="metadata"
+            style="width:100%;display:block;background:#000;">
+          </video>
+          <div class="dep-play">▶</div>
+          ${label ? `<div class="dep-overlay"><div class="dep-overlay-label">${label}</div>${sub ? `<div class="dep-overlay-sub">${sub}</div>` : ''}</div>` : ''}`;
+        card.addEventListener('click',()=>{
+          const v = card.querySelector('video');
+          if(v.paused){v.play();card.classList.add('playing');}
+          else{v.pause();card.classList.remove('playing');}
+        });
+      } else {
+        card.innerHTML = `
+          <img src="imagens/depoimentos/${file}" alt="Depoimento" loading="lazy">
+          ${label ? `<div class="dep-overlay"><div class="dep-overlay-label">${label}</div>${sub ? `<div class="dep-overlay-sub">${sub}</div>` : ''}</div>` : ''}`;
+        card.onclick = ()=>openLB(`imagens/depoimentos/${file}`);
+      }
+      masonry.appendChild(card);
+    });
+    // Re-trigger reveal observer for dynamically added cards
+    masonry.querySelectorAll('.dep-card').forEach(el=>obs.observe(el));
+  }catch(e){
+    // Sem JSON ainda, mantém só os cards de texto fixos
+  }
+}
+loadDepoimentos();
 
 function scrollGal(dir){
   document.getElementById('galeria').scrollBy({left:dir*240,behavior:'smooth'});

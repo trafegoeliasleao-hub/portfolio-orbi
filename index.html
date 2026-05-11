@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elias Leão — Gestão de Tráfego Pago</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAzIiBoZWlnaHQ9Ijg4IiB2aWV3Qm94PSIwIDAgMjAzIDg4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0zMS42NTE0IDEyLjA3MDNDNDEuMDM5OSAxMi4wNzA1IDQ5LjMyNjYgMTYuNzgzMyA1NC4yNzkzIDIzLjk3MDdDNTUuNTg1MiAyNC4wNDk2IDU2Ljc4MTIgMjQuMjI2OSA1Ny44NDE4IDI0LjUxMTdDNjAuMDUzOCAyNS4xMDU5IDYxLjg3ODMgMjYuMjI2MSA2Mi42ODc1IDI4LjA5MThDNjMuNDk2NCAyOS45NTc3IDYzLjA2NzQgMzIuMDU1NCA2MS45ODkzIDM0LjA3NjJDNjEuMzAxNCAzNS4zNjUyIDYwLjMxMDUgMzYuNjk5IDU5LjA3MzIgMzguMDQ4OEM1OS4wOTk0IDM4LjU0MDMgNTkuMTE0MyAzOS4wMzUyIDU5LjExNDMgMzkuNTMzMkM1OS4xMTQzIDU0LjcwMDIgNDYuODE4NCA2Ni45OTU5IDMxLjY1MTQgNjYuOTk2MUMyNC4xOTUgNjYuOTk2IDE3LjQzMzggNjQuMDIzIDEyLjQ4NTQgNTkuMTk5MkM5LjcxMzY4IDU5LjM2MzggNy4yNTE3MyA1OS4yMDY1IDUuMjY0NjUgNTguNjcyOUMzLjA1MjY1IDU4LjA3ODcgMS4yMjkwNyA1Ni45NTc2IDAuNDE5OTIyIDU1LjA5MThDLTAuMzg4ODU5IDUzLjIyNTkgMC4wNDAwMDMxIDUxLjEyOTIgMS4xMTgxNiA0OS4xMDg0QzEuOTE0NTcgNDcuNjE1OCAzLjExNTE5IDQ2LjA2MjQgNC42MzY3MiA0NC40OTUxQzQuMzQzMDcgNDIuODg1OCA0LjE4OTQ1IDQxLjIyNzMgNC4xODk0NSAzOS41MzMyQzQuMTg5NzQgMjQuMzY2NCAxNi40ODQ2IDEyLjA3MDYgMzEuNjUxNCAxMi4wNzAzWiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNOTMuOTg5MyAxNi44NjkxQzk4LjUwMDQgMTYuODY5MSAxMDIuNiAxNy44ODg0IDEwNi4yODcgMTkuOTI3MUMxMTAuMDE3IDIxLjk2NTggMTEyLjk0NSAyNC43NjM2IDExNS4wNyAyOC4zMjA1QzExNy4xOTYgMzEuODc3NCAxMTguMjU4IDM1LjgyNDYgMTE4LjI1OCA0MC4xNjIzQzExOC4yNTggNDQuNDk5OSAxMTcuMTk2IDQ4LjQ2ODkgMTE1LjA3IDUyLjA2OTFDMTEyLjk0NSA1NS42MjYgMTEwLjAxNyA1OC40NDU1IDEwNi4yODcgNjAuNTI3NUMxMDIuNiA2Mi42MDk2IDk4LjUwMDQgNjMuNjUwNiA5My45ODkzIDYzLjY1MDZDODkuNDc4MSA2My42NTA2IDg1LjM1NzQgNjIuNjA5NiA4MS42MjcgNjAuNTI3NUM3Ny45NCA1OC40NDU1IDc1LjAzMzggNTUuNjI2IDcyLjkwODMgNTIuMDY5MUM3MC43ODI5IDQ4LjQ2ODkgNjkuNzIwMSA0NC40OTk5IDY5LjcyMDEgNDAuMTYyM0M2OS43MjAxIDM1LjgyNDYgNzAuNzgyOSAzMS44Nzc0IDcyLjkwODMgMjguMzIwNUM3NS4wMzM4IDI0Ljc2MzYgNzcuOTQgMjEuOTY1OCA4MS42MjcgMTkuOTI3MUM4NS4zNTc0IDE3Ljg4ODQgODkuNDc4MSAxNi44NjkxIDkzLjk4OTMgMTYuODY5MVpNOTQuMTE5NCAyNC42NzY5QzkxLjM0MzMgMjQuNjc2OSA4OC43NjI0IDI1LjM3MDkgODYuMzc2NyAyNi43NTg5QzgzLjk5MSAyOC4xMDM2IDgyLjEwNDEgMjkuOTY4OCA4MC43MTYxIDMyLjM1NDVDNzkuMzI4IDM0LjY5NjggNzguNjM0IDM3LjI5OTQgNzguNjM0IDQwLjE2MjNDNzguNjM0IDQzLjAyNTEgNzkuMzI4IDQ1LjY0OTQgODAuNzE2MSA0OC4wMzUxQzgyLjE0NzUgNTAuNDIwOCA4NC4wMzQ0IDUyLjMwNzcgODYuMzc2NyA1My42OTU3Qzg4Ljc2MjQgNTUuMDgzOCA5MS4zNDMzIDU1Ljc3NzggOTQuMTE5NCA1NS43Nzc4Qzk2Ljg1MjEgNTUuNzc3OCA5OS4zODk3IDU1LjA4MzggMTAxLjczMiA1My42OTU3QzEwNC4wNzQgNTIuMzA3NyAxMDUuOTE4IDUwLjQyMDggMTA3LjI2MiA0OC4wMzUxQzEwOC42NTEgNDUuNjQ5NCAxMDkuMzQ1IDQzLjAyNTEgMTA5LjM0NSA0MC4xNjIzQzEwOS4zNDUgMzcuMjk5NCAxMDguNjUxIDM0LjY5NjggMTA3LjI2MiAzMi4zNTQ1QzEwNS45MTggMjkuOTY4OCAxMDQuMDc0IDI4LjEwMzYgMTAxLjczMiAyNi43NTg5Qzk5LjM4OTcgMjUuMzcwOSA5Ni44NTIxIDI0LjY3NjkgOTQuMTE5NCAyNC42NzY5WiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+/* ── GRAIN TEXTURE ── */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity:0.035;mix-blend-mode:overlay;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#0a0808;
+  color:#F5EDD6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
+
+:root{
+  --gold:#F0A500;
+  --orange:#C45E00;
+  --red:#C8003A;
+  --cream:#F5EDD6;
+  --dim:#7a6f5e;
+  --dimmer:#4a4237;
+  --border:rgba(240,165,0,0.12);
+  --border-warm:rgba(240,165,0,0.2);
+  --surface:rgba(240,165,0,0.04);
+  --glass:rgba(255,255,255,0.04);
+  --glass-border:rgba(255,255,255,0.08);
+  --bg:#0a0808;
+  --bg2:#110e0c;
+  --max:1180px;
+  --grad:linear-gradient(135deg,#F0A500 0%,#C45E00 50%,#C8003A 100%);
+  --grad-soft:linear-gradient(135deg,rgba(240,165,0,0.15) 0%,rgba(200,0,58,0.08) 100%);
+}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 max(24px,calc((100vw - var(--max))/2));
+  background:rgba(10,8,8,0.75);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo svg{height:26px;width:auto;}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  font-size:0.68rem;font-weight:400;letter-spacing:0.1em;
+  color:var(--dim);text-decoration:none;transition:color .2s;text-transform:uppercase;
+}
+.nav-links a:hover{color:var(--cream);}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--grad);color:#fff;
+  padding:9px 22px;border-radius:999px;
+  font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  text-decoration:none;transition:opacity .2s, transform .2s;
+  box-shadow:0 0 24px rgba(200,0,58,0.25);
+}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px);}
+
+/* ── LAYOUT ── */
+.wrap{
+  max-width:var(--max);margin:0 auto;
+  padding-left:max(24px,calc((100vw - var(--max))/2));
+  padding-right:max(24px,calc((100vw - var(--max))/2));
+  position:relative;z-index:1;
+}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* ── EYEBROW / TITLES ── */
+.eyebrow{
+  font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:14px;display:inline-block;
+}
+.big-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,7vw,6.5rem);line-height:0.9;letter-spacing:0.01em;
+  color:var(--cream);
+}
+.big-title em{
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-style:normal;
+}
+
+/* ── BUTTONS ── */
+.btn-p{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--grad);color:#fff;
+  padding:14px 32px;border-radius:999px;
+  font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  text-decoration:none;transition:all .25s;
+  box-shadow:0 4px 32px rgba(200,0,58,0.25);
+}
+.btn-p:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 40px rgba(200,0,58,0.35);}
+.btn-g{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--glass-border);color:var(--cream);
+  padding:14px 26px;border-radius:999px;
+  font-size:0.75rem;font-weight:400;text-decoration:none;transition:all .2s;
+}
+.btn-g:hover{border-color:var(--border-warm);background:rgba(240,165,0,0.08);}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden;}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(196,94,0,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(200,0,58,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(240,165,0,0.06) 0%, transparent 60%);
+}
+.hero-inner{display:grid;grid-template-columns:1fr 360px;gap:72px;align-items:center;padding:80px 0;position:relative;z-index:1;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(240,165,0,0.06);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--border-warm);
+  padding:6px 14px;border-radius:999px;
+  font-size:0.6rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:24px;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.15;}}
+
+.hero-h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(4.5rem,10vw,9rem);line-height:0.88;letter-spacing:0.01em;
+  color:var(--cream);margin-bottom:24px;
+}
+.hero-h1 em{
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-style:normal;
+}
+.hero-sub{font-size:0.9rem;color:var(--dim);line-height:1.9;font-weight:300;max-width:460px;margin-bottom:36px;}
+.hero-sub strong{color:var(--cream);font-weight:500;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* Hero photo — vidro */
+.hero-photo{
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(240,165,0,0.15);
+  border-radius:20px;overflow:hidden;position:relative;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.04) inset, 0 24px 80px rgba(0,0,0,0.5);
+}
+.hero-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 10%;display:block;}
+.hero-badge{
+  position:absolute;bottom:16px;left:16px;right:16px;
+  background:rgba(10,8,8,0.6);
+  backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);
+  border:1px solid rgba(240,165,0,0.2);
+  border-radius:12px;padding:14px 16px;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+.hero-badge-name{font-size:0.88rem;font-weight:600;color:var(--cream);}
+.hero-badge-role{
+  font-size:0.6rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* ── NÚMEROS ── */
+#numeros{padding:80px 0;border-top:1px solid var(--border);}
+.nums-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;
+}
+.num-item{
+  background:var(--bg);padding:36px 28px;position:relative;
+  transition:background .25s;
+}
+.num-item:hover{background:var(--bg2);}
+.num-item::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s;
+}
+.num-item:hover::before{transform:scaleX(1);}
+.num-val{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.8rem,4vw,4.2rem);color:var(--cream);line-height:1;margin-bottom:8px;
+}
+.num-val em{
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-style:normal;
+}
+.num-lab{font-size:0.66rem;color:var(--dim);line-height:1.65;}
+
+/* ── CASE ── */
+#case{padding:100px 0;border-top:1px solid var(--border);}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:56px;}
+.case-text p{font-size:0.87rem;color:var(--dim);line-height:1.95;font-weight:300;margin-bottom:18px;}
+.case-text p strong{color:var(--cream);font-weight:500;}
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:36px;}
+.tl-item{display:grid;grid-template-columns:72px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--border);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-date{font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--gold);letter-spacing:0.06em;padding-top:2px;}
+.tl-text{font-size:0.77rem;color:var(--dim);line-height:1.7;}
+.tl-text strong{color:var(--cream);font-weight:500;}
+
+.highlights{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;}
+.hl{
+  background:var(--grad-soft);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--border-warm);border-radius:14px;padding:24px 28px;
+  position:relative;overflow:hidden;
+}
+.hl::before{
+  content:'';position:absolute;top:0;right:0;width:80px;height:80px;
+  background:radial-gradient(circle, rgba(240,165,0,0.15) 0%, transparent 70%);
+}
+.hl-val{
+  font-family:'Bebas Neue',sans-serif;font-size:3rem;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hl-lab{font-size:0.66rem;color:var(--dim);margin-top:4px;line-height:1.5;}
+
+.lojas{display:flex;flex-direction:column;gap:8px;}
+.loja{
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--border);border-radius:10px;
+  padding:12px 18px;text-decoration:none;transition:all .2s;
+}
+.loja:hover{border-color:var(--border-warm);background:rgba(240,165,0,0.06);}
+.loja-info .ln{font-size:0.78rem;font-weight:500;color:var(--cream);}
+.loja-info .lc{font-size:0.6rem;color:var(--dim);}
+.loja-at{font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--gold);}
+.lojas-label{font-size:0.6rem;color:var(--dimmer);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;}
+
+/* ── GALERIA ── */
+#resultados{padding:100px 0;border-top:1px solid var(--border);}
+.gal-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:20px;}
+.gal-nav{display:flex;gap:8px;}
+.gal-btn{
+  width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  color:var(--cream);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;transition:all .2s;
+}
+.gal-btn:hover{border-color:var(--border-warm);background:rgba(240,165,0,0.08);}
+.gal-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:none;}
+.gal-track::-webkit-scrollbar{display:none;}
+.story{
+  flex:0 0 auto;width:210px;aspect-ratio:9/16;
+  border-radius:14px;overflow:hidden;scroll-snap-align:start;
+  background:#1a1410;border:1px solid var(--border);cursor:pointer;position:relative;
+}
+.story img{width:100%;height:100%;object-fit:cover;transition:transform .35s;}
+.story:hover img{transform:scale(1.04);}
+.story::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.4) 0%,transparent 50%);
+  opacity:0;transition:opacity .3s;
+}
+.story:hover::after{opacity:1;}
+.gal-hint{margin-top:14px;font-size:0.6rem;color:var(--dimmer);text-align:center;letter-spacing:0.08em;}
+
+/* LIGHTBOX */
+#lb{position:fixed;inset:0;z-index:999;background:rgba(5,3,3,0.97);display:none;align-items:center;justify-content:center;padding:20px;}
+#lb.open{display:flex;}
+#lb img{max-height:92vh;max-width:min(400px,92vw);border-radius:14px;object-fit:contain;}
+#lb-close{
+  position:absolute;top:20px;right:20px;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer;
+  font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+}
+
+/* ── DEPOIMENTOS ── */
+#depoimentos{padding:100px 0;border-top:1px solid var(--border);}
+.dep-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px;}
+.dep{
+  background:rgba(255,255,255,0.03);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--border);border-radius:14px;padding:28px;
+  transition:border-color .2s;
+}
+.dep:hover{border-color:var(--border-warm);}
+.dep-q{
+  font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;margin-bottom:12px;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.dep-txt{font-size:0.84rem;color:var(--dim);line-height:1.85;font-weight:300;}
+.dep-txt strong{color:var(--cream);font-weight:500;}
+.dep-foot{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+.dep-name{font-size:0.75rem;font-weight:600;color:var(--cream);}
+.dep-role{font-size:0.6rem;color:var(--dimmer);margin-top:2px;}
+.dep-wide{grid-column:1/-1;display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+.dep-wide-text{flex:1;min-width:260px;}
+.dep-prints{display:flex;gap:12px;}
+.dep-print{width:160px;aspect-ratio:9/16;border-radius:10px;object-fit:cover;border:1px solid var(--border);cursor:pointer;transition:all .2s;}
+.dep-print:hover{opacity:.85;border-color:var(--border-warm);}
+.dep-print-lab{font-size:0.58rem;color:var(--dimmer);text-align:center;margin-top:6px;}
+
+/* ── SERVIÇOS ── */
+#servicos{padding:100px 0;border-top:1px solid var(--border);}
+.serv-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:52px;
+}
+.serv{background:var(--bg);padding:36px 28px;transition:background .2s;}
+.serv:hover{background:var(--bg2);}
+.serv-num{
+  font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;
+  margin-bottom:20px;display:block;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.serv-ico{font-size:1.6rem;margin-bottom:16px;display:block;}
+.serv-name{font-size:1rem;font-weight:600;color:var(--cream);margin-bottom:10px;}
+.serv-desc{font-size:0.75rem;color:var(--dim);line-height:1.85;font-weight:300;}
+.serv-items{margin-top:16px;display:flex;flex-direction:column;gap:7px;}
+.serv-item{font-size:0.67rem;color:var(--dim);display:flex;align-items:center;gap:8px;}
+.serv-item::before{
+  content:'';width:3px;height:3px;border-radius:50%;flex-shrink:0;
+  background:var(--gold);
+}
+
+/* ── CLIENTES ── */
+#clientes{padding:100px 0;border-top:1px solid var(--border);}
+.cli-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px;}
+.cli-sub{font-size:0.84rem;color:var(--dim);line-height:1.85;font-weight:300;}
+.logos{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;
+}
+.logo-s{background:var(--bg);aspect-ratio:1;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.logo-s:hover{background:var(--bg2);}
+.logo-s img{width:68%;height:68%;object-fit:contain;filter:brightness(0) invert(1);opacity:0.38;transition:opacity .25s;}
+.logo-s:hover img{opacity:.8;}
+.logo-mais{font-size:0.63rem;color:var(--dimmer);letter-spacing:0.06em;text-transform:uppercase;}
+
+/* ── GESTOR ── */
+#gestor{padding:100px 0;border-top:1px solid var(--border);}
+.gestor-grid{display:grid;grid-template-columns:320px 1fr;gap:72px;align-items:center;margin-top:52px;}
+.gestor-img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 10%;
+  border-radius:18px;display:block;
+  border:1px solid rgba(240,165,0,0.15);
+  box-shadow:0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+.g-cargo{
+  font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:28px;display:block;
+}
+.g-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5rem);color:var(--cream);line-height:0.88;margin-bottom:8px;}
+.g-bio{font-size:0.84rem;color:var(--dim);line-height:1.95;font-weight:300;margin-bottom:14px;}
+.g-bio strong{color:var(--cream);font-weight:500;}
+.g-stats{display:flex;gap:36px;margin:32px 0;padding-top:28px;border-top:1px solid var(--border);}
+.g-stat-val{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--cream);line-height:1;}
+.g-stat-val em{
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-style:normal;
+}
+.g-stat-lab{font-size:0.6rem;color:var(--dimmer);letter-spacing:0.08em;text-transform:uppercase;margin-top:3px;}
+.g-links{display:flex;gap:10px;flex-wrap:wrap;}
+.g-link{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 18px;border-radius:999px;
+  font-size:0.67rem;font-weight:600;letter-spacing:0.04em;text-decoration:none;transition:all .2s;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--glass-border);color:var(--cream);
+}
+.g-link:hover{border-color:var(--border-warm);background:rgba(240,165,0,0.08);}
+.g-link.p{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 24px rgba(200,0,58,0.25);}
+.g-link.p:hover{opacity:.88;transform:translateY(-1px);}
+
+/* ── CTA ── */
+#cta{padding:120px 0;border-top:1px solid var(--border);text-align:center;position:relative;overflow:hidden;}
+#cta::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(196,94,0,0.1) 0%,rgba(200,0,58,0.06) 40%,transparent 70%);
+  pointer-events:none;
+}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,8rem);color:var(--cream);line-height:0.9;margin-bottom:20px;}
+.cta-title em{
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-style:normal;
+}
+.cta-sub{font-size:0.88rem;color:var(--dim);margin-bottom:44px;font-weight:300;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{padding:28px 0;border-top:1px solid var(--border);}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.foot-copy{font-size:0.63rem;color:var(--dimmer);}
+.foot-links{display:flex;gap:20px;}
+.foot-links a{font-size:0.63rem;color:var(--dimmer);text-decoration:none;transition:color .2s;}
+.foot-links a:hover{color:var(--gold);}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-photo{max-width:300px;}
+  .nums-grid{grid-template-columns:1fr 1fr;}
+  .case-grid{grid-template-columns:1fr;}
+  .dep-grid{grid-template-columns:1fr;}
+  .dep-wide{flex-direction:column;}
+  .serv-grid{grid-template-columns:1fr;}
+  .cli-head{grid-template-columns:1fr;}
+  .gestor-grid{grid-template-columns:1fr;gap:40px;}
+  .gestor-img{aspect-ratio:4/3;object-position:center 20%;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .nums-grid{grid-template-columns:1fr 1fr;}
+  .logos{grid-template-columns:repeat(3,1fr);}
+  .story{width:170px;}
+  .g-stats{gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="#">
+      <svg width="120" height="52" viewBox="0 0 203 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M31.6514 12.0703C41.0399 12.0705 49.3266 16.7833 54.2793 23.9707C55.5852 24.0496 56.7812 24.2269 57.8418 24.5117C60.0538 25.1059 61.8783 26.2261 62.6875 28.0918C63.4964 29.9577 63.0674 32.0554 61.9893 34.0762C61.3014 35.3652 60.3105 36.699 59.0732 38.0488C59.0994 38.5403 59.1143 39.0352 59.1143 39.5332C59.1143 54.7002 46.8184 66.9959 31.6514 66.9961C24.195 66.996 17.4338 64.023 12.4854 59.1992C9.71368 59.3638 7.25173 59.2065 5.26465 58.6729C3.05265 58.0787 1.22907 56.9576 0.419922 55.0918C-0.388859 53.2259 0.0400031 51.1292 1.11816 49.1084C1.91457 47.6158 3.11519 46.0624 4.63672 44.4951C4.34307 42.8858 4.18945 41.2273 4.18945 39.5332C4.18974 24.3664 16.4846 12.0706 31.6514 12.0703Z" fill="white"/>
+        <path d="M93.9893 16.8691C98.5004 16.8691 102.6 17.8884 106.287 19.9271C110.017 21.9658 112.945 24.7636 115.07 28.3205C117.196 31.8774 118.258 35.8246 118.258 40.1623C118.258 44.4999 117.196 48.4689 115.07 52.0691C112.945 55.626 110.017 58.4455 106.287 60.5275C102.6 62.6096 98.5004 63.6506 93.9893 63.6506C89.4781 63.6506 85.3574 62.6096 81.627 60.5275C77.94 58.4455 75.0338 55.626 72.9083 52.0691C70.7829 48.4689 69.7201 44.4999 69.7201 40.1623C69.7201 35.8246 70.7829 31.8774 72.9083 28.3205C75.0338 24.7636 77.94 21.9658 81.627 19.9271C85.3574 17.8884 89.4781 16.8691 93.9893 16.8691ZM94.1194 24.6769C91.3433 24.6769 88.7624 25.3709 86.3767 26.7589C83.991 28.1036 82.1041 29.9688 80.7161 32.3545C79.328 34.6968 78.634 37.2994 78.634 40.1623C78.634 43.0251 79.328 45.6494 80.7161 48.0351C82.1475 50.4208 84.0344 52.3077 86.3767 53.6957C88.7624 55.0838 91.3433 55.7778 94.1194 55.7778C96.8521 55.7778 99.3897 55.0838 101.732 53.6957C104.074 52.3077 105.918 50.4208 107.262 48.0351C108.651 45.6494 109.345 43.0251 109.345 40.1623C109.345 37.2994 108.651 34.6968 107.262 32.3545C105.918 29.9688 104.074 28.1036 101.732 26.7589C99.3897 25.3709 96.8521 24.6769 94.1194 24.6769Z" fill="white"/>
+      </svg>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#numeros">Resultados</a></li>
+    <li><a href="#case">Case</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#gestor">Sobre</a></li>
+  </ul>
+  <a href="https://wa.me/5593991330797" class="nav-cta">Falar agora</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag reveal"><span class="hero-dot"></span>Disponível para novos clientes</div>
+        <h1 class="hero-h1 reveal d1">TRÁFEGO<br>QUE<br><em>VENDE</em></h1>
+        <p class="hero-sub reveal d2">Gestão de Meta Ads para negócios locais que querem <strong>crescimento previsível</strong>, leads qualificados e resultados mensuráveis todo mês.</p>
+        <div class="hero-btns reveal d3">
+          <a href="https://wa.me/5593991330797" class="btn-p">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a href="https://instagram.com/aorbimarketing" class="btn-g" target="_blank">@aorbimarketing</a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="hero-photo">
+          <img src="imagens/perfil.png" alt="Elias Leão">
+          <div class="hero-badge">
+            <div class="hero-badge-name">Elias Leão</div>
+            <div class="hero-badge-role">Meta Ads · Sócio Fundador Orbi Marketing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section id="numeros">
+  <div class="wrap">
+    <div class="nums-grid">
+      <div class="num-item reveal">
+        <div class="num-val"><em>73,5</em>×</div>
+        <div class="num-lab">Melhor ROAS — R$ 1 investido gerou R$ 73,50 de retorno</div>
+      </div>
+      <div class="num-item reveal d1">
+        <div class="num-val">+<em>20</em></div>
+        <div class="num-lab">Clientes simultâneos ativos — concessionárias, delivery, clínicas e varejo</div>
+      </div>
+      <div class="num-item reveal d2">
+        <div class="num-val">+<em>1k</em></div>
+        <div class="num-lab">Mensagens/mês nas 5 maiores contas Shineray</div>
+      </div>
+      <div class="num-item reveal d3">
+        <div class="num-val">R$<em>0,55</em></div>
+        <div class="num-lab">Custo por conversa — resultado de campanha ativa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section id="clientes">
+  <div class="wrap">
+    <div class="cli-head">
+      <div>
+        <span class="eyebrow reveal">Portfólio</span>
+        <h2 class="big-title reveal d1" style="font-size:clamp(2.2rem,4vw,4rem);">ALGUNS DOS<br><em>NOSSOS CLIENTES</em></h2>
+      </div>
+      <p class="cli-sub reveal">Negócios locais atendidos em diferentes nichos e regiões do Brasil — concessionárias, delivery, clínicas, distribuidoras e comércio em geral.</p>
+    </div>
+    <div class="logos reveal">
+      <div class="logo-s"><img src="imagens/cliente1.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente2.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente3.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente4.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente5.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente6.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente7.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente8.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente9.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente10.png" alt="cliente"></div>
+      <div class="logo-s"><img src="imagens/cliente11.png" alt="cliente"></div>
+      <div class="logo-s logo-mais">E muito mais...</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CASE SHINERAY -->
+<section id="case">
+  <div class="wrap">
+    <span class="eyebrow reveal">Case de sucesso</span>
+    <h2 class="big-title reveal d1">GRUPO <em>SHINERAY</em></h2>
+    <div class="case-grid">
+      <div>
+        <div class="case-text reveal">
+          <p>Em janeiro de 2025, assumi a gestão de tráfego da <strong>Shineray Altamira</strong>, uma concessionária com apenas 1 mês de operação. Resultado: leads qualificados desde a primeira semana, time comercial com fila de atendimento.</p>
+          <p>Os gestores gostaram tanto que em <strong>30 dias já pediam a mesma estrutura para Itaituba</strong>. A partir daí, foi escala controlada — cidade por cidade, conta por conta. Em 9 meses chegamos a <strong>13 lojas simultâneas</strong> em múltiplos estados.</p>
+          <p>Paralelamente, mantive um portfólio diverso com mais de 20 clientes ativos — entre eles a <strong>Froes Pizzaria</strong> (delivery), <strong>Lider Distribuidora</strong>, <strong>Dra. Renata</strong>, <strong>Fast Escova</strong>, <strong>Bodytech</strong> e Dádiva Ambientes. Nichos diferentes, estratégias diferentes, resultados consistentes em todos.</p>
+        </div>
+        <div class="timeline reveal d1">
+          <div class="tl-item">
+            <span class="tl-date">JAN 25</span>
+            <span class="tl-text"><strong>1ª loja</strong> — Shineray Altamira. 1 mês de abertura, primeiros leads chegando.</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">FEV 25</span>
+            <span class="tl-text"><strong>Expansão para Itaituba.</strong> Modelo replicado após aprovação dos gestores.</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">MAI 25</span>
+            <span class="tl-text"><strong>6 lojas ativas</strong> com estrutura de relatórios padronizada por unidade.</span>
+          </div>
+          <div class="tl-item">
+            <span class="tl-date">SET 25</span>
+            <span class="tl-text"><strong>13 lojas simultâneas</strong> em cidades de 35k a 300k habitantes. R$ 12k+/mês gerenciados.</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="highlights">
+          <div class="hl reveal">
+            <div class="hl-val">R$ 12.132</div>
+            <div class="hl-lab">Valor gerenciado em um único mês nas maiores contas do grupo</div>
+          </div>
+          <div class="hl reveal d1">
+            <div class="hl-val">+1.075</div>
+            <div class="hl-lab">Conversas iniciadas em um mês por uma única loja a R$ 1,29/mensagem</div>
+          </div>
+        </div>
+        <p class="lojas-label reveal d1">Lojas atendidas</p>
+        <div class="lojas reveal d2">
+          <a href="https://instagram.com/shineray.altamira" target="_blank" class="loja">
+            <div class="loja-info"><span class="ln">Shineray Altamira</span><span class="lc">Altamira, PA</span></div>
+            <span class="loja-at">@shineray.altamira</span>
+          </a>
+          <a href="https://instagram.com/shinerayitaituba" target="_blank" class="loja">
+            <div class="loja-info"><span class="ln">Shineray Itaituba</span><span class="lc">Itaituba, PA</span></div>
+            <span class="loja-at">@shinerayitaituba</span>
+          </a>
+          <a href="https://instagram.com/shineraypetrolina" target="_blank" class="loja">
+            <div class="loja-info"><span class="ln">Shineray Petrolina</span><span class="lc">Petrolina, PE</span></div>
+            <span class="loja-at">@shineraypetrolina</span>
+          </a>
+          <a href="https://instagram.com/shinerayriobranco" target="_blank" class="loja">
+            <div class="loja-info"><span class="ln">Shineray Rio Branco</span><span class="lc">Rio Branco, AC</span></div>
+            <span class="loja-at">@shinerayriobranco</span>
+          </a>
+          <a href="https://instagram.com/shineray_parnaiba" target="_blank" class="loja">
+            <div class="loja-info"><span class="ln">Shineray Parnaíba</span><span class="lc">Parnaíba, PI</span></div>
+            <span class="loja-at">@shineray_parnaiba</span>
+          </a>
+          <a href="https://instagram.com/shinerayparanagua" target="_blank" class="loja">
+            <div class="loja-info"><span class="ln">Shineray Paranaguá</span><span class="lc">Paranaguá, PR</span></div>
+            <span class="loja-at">@shinerayparanagua</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="resultados">
+  <div class="wrap">
+    <div class="gal-header">
+      <div>
+        <span class="eyebrow reveal">Prints das campanhas</span>
+        <h2 class="big-title reveal d1" style="font-size:clamp(2.2rem,4vw,4rem);">RESULTADOS<br><em>REAIS</em></h2>
+      </div>
+      <div class="gal-nav reveal">
+        <button class="gal-btn" onclick="scrollGal(-1)">←</button>
+        <button class="gal-btn" onclick="scrollGal(1)">→</button>
+      </div>
+    </div>
+    <div class="gal-track" id="galeria"></div>
+    <p class="gal-hint">Clique para ampliar · Arraste para navegar</p>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+  <div class="wrap">
+    <span class="eyebrow reveal">O que dizem os clientes</span>
+    <h2 class="big-title reveal d1" style="font-size:clamp(2.2rem,4vw,4rem);">CLIENTES<br><em>SATISFEITOS</em></h2>
+    <div class="dep-grid">
+      <div class="dep reveal">
+        <div class="dep-q">"</div>
+        <p class="dep-txt">Resultado acima do esperado. <strong>Tu é brabo.</strong></p>
+        <div class="dep-foot"><div class="dep-name">Cliente Shineray</div><div class="dep-role">Grupo Shineray Motos</div></div>
+      </div>
+      <div class="dep reveal d1">
+        <div class="dep-q">"</div>
+        <p class="dep-txt"><strong>2 agendamentos, 1 encomenda confirmada</strong> — e as vendas não param. Cliente entrou há 10 dias e já está gerando resultado consistente.</p>
+        <div class="dep-foot"><div class="dep-name">Matheus Darwich</div><div class="dep-role">Ounce Conceito · @ounce_conceito</div></div>
+      </div>
+      <div class="dep dep-wide reveal">
+        <div class="dep-wide-text">
+          <div class="dep-q">"</div>
+          <p class="dep-txt">Prints reais das conversas com clientes — <strong>resultado acima do esperado, vendas chegando, equipe comercial a todo vapor.</strong></p>
+          <p class="dep-txt" style="margin-top:10px;">Publicados nos stories da <strong>@aorbimarketing</strong>. Clique para ampliar.</p>
+        </div>
+        <div class="dep-prints">
+          <div>
+            <img src="imagens/dep01.png" alt="Depoimento 1" class="dep-print" onclick="openLB(this.src)">
+            <p class="dep-print-lab">Ampliar</p>
+          </div>
+          <div>
+            <img src="imagens/dep02.png" alt="Depoimento 2" class="dep-print" onclick="openLB(this.src)">
+            <p class="dep-print-lab">Ampliar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="wrap">
+    <span class="eyebrow reveal">O que ofereço</span>
+    <h2 class="big-title reveal d1" style="font-size:clamp(2.2rem,4vw,4rem);">SERVIÇOS<br><em>DISPONÍVEIS</em></h2>
+    <div class="serv-grid">
+      <div class="serv reveal">
+        <span class="serv-num">01</span>
+        <span class="serv-ico">📣</span>
+        <div class="serv-name">Gestão de Tráfego Pago</div>
+        <p class="serv-desc">Campanhas no Meta Ads com foco em leads qualificados, custo por resultado controlado e escala previsível.</p>
+        <div class="serv-items">
+          <span class="serv-item">Criação e gestão de campanhas</span>
+          <span class="serv-item">Segmentação e públicos personalizados</span>
+          <span class="serv-item">Otimização contínua</span>
+          <span class="serv-item">Relatório mensal detalhado</span>
+        </div>
+      </div>
+      <div class="serv reveal d1">
+        <span class="serv-num">02</span>
+        <span class="serv-ico">📱</span>
+        <div class="serv-name">Gestão de Instagram</div>
+        <p class="serv-desc">Planejamento editorial, produção de conteúdo, edição e publicações — autoridade digital que alimenta o tráfego pago.</p>
+        <div class="serv-items">
+          <span class="serv-item">Planejamento mensal</span>
+          <span class="serv-item">Edição de fotos e vídeos</span>
+          <span class="serv-item">Publicação e gestão da conta</span>
+          <span class="serv-item">Estratégia de stories e reels</span>
+        </div>
+      </div>
+      <div class="serv reveal d2">
+        <span class="serv-num">03</span>
+        <span class="serv-ico">💬</span>
+        <div class="serv-name">Chat+CRM</div>
+        <p class="serv-desc">Implementação do Chatwoot com dashboard de leads — jornada completa do clique até a venda rastreada.</p>
+        <div class="serv-items">
+          <span class="serv-item">Implementação do Chatwoot</span>
+          <span class="serv-item">Dashboard no Supabase</span>
+          <span class="serv-item">Rastreamento de vendas</span>
+          <span class="serv-item">Treinamento do time comercial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GESTOR -->
+<section id="gestor">
+  <div class="wrap">
+    <span class="eyebrow reveal">Quem está por trás</span>
+    <div class="gestor-grid">
+      <div class="reveal">
+        <img src="imagens/perfil.png" alt="Elias Leão" class="gestor-img">
+      </div>
+      <div>
+        <h2 class="g-name reveal">ELIAS<br>LEÃO</h2>
+        <span class="g-cargo reveal d1">Especialista em Meta Ads · Sócio Fundador da Orbi Marketing</span>
+        <p class="g-bio reveal d1">Gestor de tráfego com foco em negócios locais. Construí uma operação de <strong>13 lojas simultâneas</strong> para o Grupo Shineray em menos de 1 ano — partindo de uma única concessionária recém-inaugurada.</p>
+        <p class="g-bio reveal d1">Cada cliente recebe estratégia personalizada, acompanhamento próximo e total transparência nos resultados. Não vendo promessa. Entrego gestão profissional com dados reais todo mês.</p>
+        <div class="g-stats reveal d2">
+          <div><div class="g-stat-val">3<em>+</em></div><div class="g-stat-lab">Anos de experiência</div></div>
+          <div><div class="g-stat-val">20<em>+</em></div><div class="g-stat-lab">Negócios atendidos</div></div>
+          <div><div class="g-stat-val">73<em>×</em></div><div class="g-stat-lab">Melhor ROAS</div></div>
+        </div>
+        <div class="g-links reveal d3">
+          <a href="https://wa.me/5593991330797" class="g-link p">💬 WhatsApp</a>
+          <a href="https://instagram.com/trafegoeliasleao" class="g-link" target="_blank">@trafegoeliasleao</a>
+          <a href="https://instagram.com/aorbimarketing" class="g-link" target="_blank">@aorbimarketing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="wrap">
+    <h2 class="cta-title reveal">PRONTO PARA<br><em>CRESCER?</em></h2>
+    <p class="cta-sub reveal d1">Chama no WhatsApp e conversamos sobre o seu negócio.</p>
+    <div class="cta-btns reveal d2">
+      <a href="https://wa.me/5593991330797" class="btn-p">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </a>
+      <a href="https://instagram.com/aorbimarketing" class="btn-g" target="_blank">Ver Instagram da Orbi</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <span class="foot-copy">© 2026 Orbi Marketing · Elias Leão</span>
+      <div class="foot-links">
+        <a href="https://instagram.com/trafegoeliasleao" target="_blank">@trafegoeliasleao</a>
+        <a href="https://instagram.com/aorbimarketing" target="_blank">@aorbimarketing</a>
+        <a href="https://wa.me/5593991330797">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lb" onclick="closeLB()">
+  <button id="lb-close" onclick="closeLB()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+// REVEAL
+const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// GALERIA — carrega do JSON
+async function loadGaleria(){
+  const track = document.getElementById('galeria');
+  try{
+    const res = await fetch('imagens/resultados/index.json');
+    const files = await res.json();
+    files.forEach(file=>{
+      const card = document.createElement('div');
+      card.className = 'story';
+      card.innerHTML = `<img src="imagens/resultados/${file}" alt="Resultado" loading="lazy">`;
+      card.onclick = ()=>openLB(`imagens/resultados/${file}`);
+      track.appendChild(card);
+    });
+  }catch(e){
+    track.innerHTML = `<div class="story" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px;"><span style="font-size:2rem">📊</span><span style="font-size:0.65rem;color:var(--dim);text-align:center;">Adicione imagens em<br>imagens/resultados/<br>e liste no index.json</span></div>`;
+  }
+}
+loadGaleria();
+
+function scrollGal(dir){
+  document.getElementById('galeria').scrollBy({left:dir*240,behavior:'smooth'});
+}
+
+// LIGHTBOX
+function openLB(src){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
+</script>
+</body>
+</html>

@@ -532,6 +532,23 @@ footer{padding:28px 0;border-top:1px solid var(--border);}
   .g-stats{gap:20px;}
 }
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '988871043498638');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=988871043498638&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -877,6 +894,30 @@ footer{padding:28px 0;border-top:1px solid var(--border);}
 // REVEAL
 const obs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// PIXEL — Lead: clique em qualquer link WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    fbq('track','Lead',{content_name:'whatsapp_portifolio'});
+  });
+});
+
+// PIXEL — ViewContent: rolagem até 90% da página
+let scrollFired = false;
+window.addEventListener('scroll',()=>{
+  if(scrollFired) return;
+  const scrolled = window.scrollY + window.innerHeight;
+  const total = document.documentElement.scrollHeight;
+  if(scrolled / total >= 0.9){
+    scrollFired = true;
+    fbq('track','ViewContent',{content_name:'scroll_90_portifolio'});
+  }
+});
+
+// PIXEL — TimeOnSite: 60 segundos na página
+setTimeout(()=>{
+  fbq('trackCustom','TimeOnSite',{seconds:60,page:'portifolio'});
+}, 60000);
 
 // GALERIA DE RESULTADOS — carrega do JSON, mais recente primeiro
 async function loadGaleria(){

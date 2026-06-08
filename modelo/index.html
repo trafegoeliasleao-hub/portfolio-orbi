@@ -1184,7 +1184,7 @@ const navObs = new IntersectionObserver(entries => {
       navLinks.forEach(l => l.classList.remove('active'));
       const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
       if(a) a.classList.add('active');
-    }
+    } 
   });
 }, {threshold:0.35});
 navSections.forEach(s => navObs.observe(s));

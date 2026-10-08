@@ -453,6 +453,13 @@ section{min-height:100vh;display:flex;align-items:center;position:relative;}
   color:var(--green);margin-bottom:12px;
 }
 .equipe-desc{font-size:0.82rem;color:#777;line-height:1.75;font-weight:400;}
+.equipe-solo{grid-template-columns:1fr;max-width:820px;}
+.equipe-solo .equipe-card{display:grid;grid-template-columns:300px 1fr;align-items:center;}
+.equipe-solo .equipe-foto{height:100%;aspect-ratio:auto;min-height:340px;}
+.equipe-solo .equipe-info{padding:40px 44px;}
+.equipe-solo .equipe-nome{font-size:1.6rem;}
+.equipe-solo .equipe-desc{font-size:0.95rem;}
+@media(max-width:700px){.equipe-solo .equipe-card{grid-template-columns:1fr;}.equipe-solo .equipe-foto{aspect-ratio:4/5;min-height:0;}.equipe-solo .equipe-info{padding:24px 26px;}}
 .gestor-link{
   display:inline-flex;align-items:center;gap:8px;
   padding:10px 20px;border-radius:999px;
@@ -1016,7 +1023,7 @@ section{min-height:100vh;display:flex;align-items:center;position:relative;}
     <span class="eyebrow-label reveal">A Equipe</span>
     <h2 class="equipe-title reveal reveal-d1">Quem vai cuidar<br>do seu negócio</h2>
 
-    <div class="equipe-grid" style="grid-template-columns:minmax(0,320px);">
+    <div class="equipe-grid equipe-solo">
 
       <!-- Elias -->
       <div class="equipe-card reveal">

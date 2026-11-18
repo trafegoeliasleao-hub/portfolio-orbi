@@ -664,6 +664,17 @@ section{min-height:100vh;display:flex;align-items:center;position:relative;}
 .video-link:hover{color:#0ACC00;}
 @media(max-width:900px){.videos-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:480px){.videos-grid{grid-template-columns:1fr;}}
+
+/* PROVA SOCIAL EM CARROSSEL (passa para o lado) */
+.dep-masonry-lgt{columns:auto!important;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding:4px 2px 18px;align-items:flex-start;scrollbar-width:thin;scrollbar-color:#ccc transparent;}
+.dep-masonry-lgt::-webkit-scrollbar{height:6px;}
+.dep-masonry-lgt::-webkit-scrollbar-thumb{background:#ccc;border-radius:999px;}
+.dep-masonry-lgt::-webkit-scrollbar-track{background:transparent;}
+.dep-masonry-lgt > *{flex:0 0 300px;scroll-snap-align:start;margin-bottom:0!important;}
+.dep-masonry-lgt .reveal{opacity:1!important;transform:none!important;}
+.dep-swipe-hint{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#aaa;}
+@media(max-width:540px){.dep-masonry-lgt > *{flex-basis:78vw;}}
 </style>
 </head>
 <body>
@@ -882,6 +893,7 @@ section{min-height:100vh;display:flex;align-items:center;position:relative;}
       </div>
       <!-- Mídia carregada via JS -->
     </div>
+    <div class="dep-swipe-hint">Arraste para o lado <span aria-hidden="true">→</span></div>
   </div>
 </section>
 

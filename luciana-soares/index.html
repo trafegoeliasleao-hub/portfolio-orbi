@@ -1315,5 +1315,15 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLB(); })
 </script>
 
 <script async src="https://www.instagram.com/embed.js"></script>
+<script>
+// Esconde reels que o Instagram não conseguiu incorporar (fica só o espaço vazio)
+setTimeout(function(){
+  document.querySelectorAll('#videos .video-item').forEach(function(it){
+    if(!it.querySelector('iframe')) it.style.display='none';
+  });
+  var vis=document.querySelectorAll('#videos .video-item:not([style*="none"])').length;
+  if(!vis){ var s=document.getElementById('videos'); if(s) s.style.display='none'; }
+}, 6000);
+</script>
 </body>
 </html>
